@@ -44,7 +44,7 @@ workLevelModule.factory('workLevelFactory',[ function() {
         result = level * workLevel.creditInterval * workLevel.creditMultiplier;
       }
     });
-    return result;
+    return result; 
   };
 
   workLevelFactory.createInitialWorkLevel = function() {
