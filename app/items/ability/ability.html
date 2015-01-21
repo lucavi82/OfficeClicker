@@ -1,0 +1,3 @@
+<div ng-show="ability.selected || numberClick > ability.cost || first">
+  <button ng-disabled="numberClick < ability.cost || ability.selected" ng-click="addAbility(ability)" type="submit">{{ability.name}}</button> Cost {{ability.cost}}
+</div>

@@ -1,0 +1,27 @@
+
+  </br>
+  Game Credit {{playerStat.gameCredit | number:1}}
+  </br>
+  work Credit {{playerStat.workCredit | number:1}}
+  </br>
+  Total CPS {{playerStat.totalCPS}}
+  </br>
+  Number of mouse {{playerStat.mouse.count}}
+  </br>
+  Number of intern {{playerStat.intern.count}}
+  </br>
+  Number of cafetaria lady {{playerStat.cafetariaLady.count}}
+  </br></br>
+    <game-level game-level="gameLevel" player-stat="playerStat"></game-level>
+  </br></br>
+  <work-level work-level="workLevel" player-stat="playerStat"></work-level>
+  </br>
+    <mouse-selection game-stat="playerStat"></mouse-selection>
+  </br>
+    <intern-selection number-click="playerStat.numberClick" intern="playerStat.intern"></intern-selection>
+  </br>
+  <cafetaria-lady-selection number-click="playerStat.numberClick" cafetaria-lady="playerStat.cafetariaLady"></cafetaria-lady-selection>
+
+  </br>
+  <button ng-click="gameLoad()" type="submit">load</button>
+  <button ng-click="gameSave()" type="submit">save</button>

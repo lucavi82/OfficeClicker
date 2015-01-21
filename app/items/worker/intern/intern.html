@@ -1,0 +1,5 @@
+<div>
+  <button ng-disabled="numberClick < intern.cost" ng-click="addWorker(intern)" type="submit">add intern</button> Cost {{intern.cost}} CPS {{intern.cps}}
+  </br>
+  <ability-selection ng-if="intern.count > 0" number-click="numberClick" ability="ability" first="{{$first}}" ng-repeat="ability in intern.abilities"></ability-selection>
+</div>
