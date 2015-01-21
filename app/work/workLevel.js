@@ -1,4 +1,6 @@
 /**
+ * Work level is used for deciding the different types of work level in the game
+ *
  * Created by awijaya on 1/15/2015.
  */
 
@@ -10,7 +12,7 @@ workLevelModule.factory('workLevelFactory',[ function() {
   var workLevels = [
     {name: 'work 1', maxLevel: 10, finishInterval: 10, finishMultiplier: 1.2, creditInterval: 10, creditMultiplier: 1.1},
     {name: 'work 2', maxLevel: 10, finishInterval: 20, finishMultiplier: 1.8, creditInterval: 15, creditMultiplier: 1.2}
-  ]
+  ];
 
   var findIndex = function(name) {
     for(var i = 0, len = workLevels.length; i < len; i++) {
@@ -19,19 +21,19 @@ workLevelModule.factory('workLevelFactory',[ function() {
       }
     }
     return -1;
-  }
+  };
 
   workLevelFactory.getClickToFinish = function(name, level) {
     var finishInterval;
     var finishMultiplier;
-    var result = -1
+    var result = -1;
     workLevels.forEach(function(workLevel) {
       if(workLevel.name === name) {
         result = level * workLevel.finishInterval * workLevel.finishMultiplier;
       }
     });
     return result;
-  }
+  };
 
   workLevelFactory.getWorkCredit = function(name, level) {
     var creditInterval;
@@ -43,17 +45,16 @@ workLevelModule.factory('workLevelFactory',[ function() {
       }
     });
     return result;
-  }
+  };
 
   workLevelFactory.createInitialWorkLevel = function() {
-    var result = {
+    return result = {
       name: workLevels[0].name,
       level: 1,
       clickToFinish: workLevelFactory.getClickToFinish(workLevels[0].name, 1),
       workCredit: workLevelFactory.getWorkCredit(workLevels[0].name, 1)
-    }
-    return result;
-  }
+    };
+  };
 
   workLevelFactory.getNextWork = function(name) {
     var index = findIndex(name) + 1;
@@ -66,7 +67,7 @@ workLevelModule.factory('workLevelFactory',[ function() {
         workCredit: workLevelFactory.getWorkCredit(workLevels[index].name, 1)
       }
     }
-  }
+  };
 
   return workLevelFactory;
 }]);
